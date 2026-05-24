@@ -728,42 +728,42 @@
   </div>
 </div>
 <!-- Disclaimer Modal End -->
-	
-<!-- ==================== DARK MODE TOGGLE ==================== -->
+
+<!-- ==================== DARK MODE TOGGLE Satu Halaman ==================== -->
 <button id="darkModeToggle" class="dark-mode-toggle" title="Ubah Mode Terang / Gelap">
-  <i class="fas fa-moon" id="moonIcon"></i>
-  <i class="fas fa-sun" id="sunIcon"></i>
+<i class="fas fa-moon" id="moonIcon"></i>
+<i class="fas fa-sun" id="sunIcon"></i>
 </button>
 
 <style>
 .dark-mode-toggle {
-  position: fixed;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 52px;
-  height: 52px;
-  background: rgba(0, 0, 0, 0.25);
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 9999;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease;
+position: fixed;
+right: 15px;
+top: 50%;
+transform: translateY(-50%);
+width: 52px;
+height: 52px;
+background: rgba(0, 0, 0, 0.3);
+border: none;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+z-index: 9999;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+transition: all 0.4s ease;
 }
 
 .dark-mode-toggle:hover {
-  background: rgba(0, 0, 0, 0.45);
-  transform: translateY(-50%) scale(1.1);
+background: rgba(0, 0, 0, 0.5);
+transform: translateY(-50%) scale(1.1);
 }
 
 .dark-mode-toggle i {
-  font-size: 26px;
-  transition: all 0.5s ease;
-  position: absolute;
+font-size: 26px;
+transition: all 0.5s ease;
+position: absolute;
 }
 
 #moonIcon { color: #e0b0ff; }
@@ -774,36 +774,49 @@
 
 /* Responsive */
 @media (max-width: 991.98px) {
-  .dark-mode-toggle { width: 46px; height: 46px; right: 12px; top: 75px; transform: none; }
-  .dark-mode-toggle i { font-size: 23px; }
+.dark-mode-toggle { width: 46px; height: 46px; right: 12px; top: 75px; transform: none; }
 }
 @media (max-width: 576px) {
-  .dark-mode-toggle { width: 42px; height: 42px; right: 10px; top: 70px; }
-  .dark-mode-toggle i { font-size: 21px; }
+.dark-mode-toggle { width: 42px; height: 42px; right: 10px; top: 70px; }
 }
 </style>
 
 <script>
-// Toggle antara index.html dan index-dark.html
+// Dark Mode Toggle - Load konten dari index-dark.html ke index.html
 document.addEventListener('DOMContentLoaded', function() {
-  const toggleBtn = document.getElementById('darkModeToggle');
+const toggleBtn = document.getElementById('darkModeToggle');
+const mainContent = document.getElementById('content'); // pastikan id="content" ada
 
-  function toggleMode() {
-    if (window.location.href.includes('index-dark.html')) {
-      localStorage.setItem('theme', 'light');
-      window.location.href = 'index.html';
-    } else {
-      localStorage.setItem('theme', 'dark');
-      window.location.href = 'index-dark.html';
-    }
-  }
+let isDark = localStorage.getItem('theme') === 'dark';
 
-  toggleBtn.addEventListener('click', toggleMode);
+function applyDarkMode() {
+if (isDark) {
+toggleBtn.classList.add('dark');
+fetch('index-dark.html')
+.then(response => response.text())
+.then(data => {
+// Ambil hanya bagian konten
+const parser = new DOMParser();
+const doc = parser.parseFromString(data, 'text/html');
+const newContent = doc.getElementById('content');
+if (newContent && mainContent) {
+mainContent.innerHTML = newContent.innerHTML;
+}
+})
+.catch(err => console.error('Gagal load dark mode:', err));
+}
+}
 
-  // Set icon sesuai halaman
-  if (window.location.href.includes('index-dark.html')) {
-    toggleBtn.classList.add('dark');
-  }
+function toggleMode() {
+isDark = !isDark;
+localStorage.setItem('theme', isDark ? 'dark' : 'light');
+location.reload(); // Refresh untuk load ulang dengan mode yang benar
+}
+
+toggleBtn.addEventListener('click', toggleMode);
+
+// Load mode gelap saat pertama kali
+if (isDark) applyDarkMode();
 });
 </script>
 	
