@@ -631,14 +631,12 @@
 <!-- Disclaimer Modal End -->
 
 <!-- ==================== DARK MODE TOGGLE ==================== -->
-<button id="darkModeToggle" class="dark-mode-toggle" title="Ubah ke Dark/Light Mode">
+<button id="darkModeToggle" class="dark-mode-toggle" title="Ubah Mode Terang / Gelap">
   <i class="fas fa-moon" id="moonIcon"></i>
   <i class="fas fa-sun" id="sunIcon"></i>
 </button>
 
 <style>
-
-/* Dark Toggle - Minimalis & Transparan */
 .dark-mode-toggle {
   position: fixed;
   right: 15px;
@@ -656,12 +654,11 @@
   z-index: 9999;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.4s ease;
-  backdrop-filter: blur(8px);
 }
 
 .dark-mode-toggle:hover {
-  background: rgba(0, 0, 0, 0.4);
-  transform: translateY(-50%) scale(1.12);
+  background: rgba(0, 0, 0, 0.45);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .dark-mode-toggle i {
@@ -670,60 +667,27 @@
   position: absolute;
 }
 
-#moonIcon { 
-  color: #e0b0ff; 
-}
+#moonIcon { color: #e0b0ff; }
+#sunIcon  { color: #ffe066; opacity: 0; transform: rotate(-30deg); }
 
-#sunIcon { 
-  color: #ffe066; 
-  opacity: 0; 
-  transform: rotate(-30deg); 
-}
+.dark-mode-toggle.dark #moonIcon { opacity: 0; transform: rotate(30deg); }
+.dark-mode-toggle.dark #sunIcon  { opacity: 1; transform: rotate(0); }
 
-/* Saat Mode Dark */
-.dark-mode-toggle.dark #moonIcon {
-  opacity: 0;
-  transform: rotate(30deg);
-}
-
-.dark-mode-toggle.dark #sunIcon {
-  opacity: 1;
-  transform: rotate(0);
-}
-
-/* ==================== RESPONSIVE MOBILE ==================== */
+/* Responsive */
 @media (max-width: 991.98px) {
-  .dark-mode-toggle {
-    width: 46px;
-    height: 46px;
-    right: 12px;
-    top: 75px;
-    transform: none;
-  }
-  .dark-mode-toggle i {
-    font-size: 23px;
-  }
+  .dark-mode-toggle { width: 46px; height: 46px; right: 12px; top: 75px; transform: none; }
+  .dark-mode-toggle i { font-size: 23px; }
 }
-
 @media (max-width: 576px) {
-  .dark-mode-toggle {
-    width: 42px;
-    height: 42px;
-    right: 10px;
-    top: 70px;
-  }
-  .dark-mode-toggle i {
-    font-size: 21px;
-  }
+  .dark-mode-toggle { width: 42px; height: 42px; right: 10px; top: 70px; }
+  .dark-mode-toggle i { font-size: 21px; }
 }
 </style>
 
 <script>
-// Script Toggle
+// Toggle antara index.html dan index-dark.html
 document.addEventListener('DOMContentLoaded', function() {
   const toggleBtn = document.getElementById('darkModeToggle');
-  const moonIcon = document.getElementById('moonIcon');
-  const sunIcon = document.getElementById('sunIcon');
 
   function toggleMode() {
     if (window.location.href.includes('index-dark.html')) {
@@ -737,6 +701,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   toggleBtn.addEventListener('click', toggleMode);
 
+  // Set icon sesuai halaman
   if (window.location.href.includes('index-dark.html')) {
     toggleBtn.classList.add('dark');
   }
