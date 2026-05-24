@@ -729,15 +729,14 @@
 </div>
 <!-- Disclaimer Modal End -->
 	
-<!-- ==================== DARK MODE TOGGLE ==================== -->
-<button id="darkModeToggle" class="dark-mode-toggle" title="Ubah ke Dark/Light Mode">
+<!-- ==================== DARK MODE TOGGLE (Single File) ==================== -->
+<button id="darkModeToggle" class="dark-mode-toggle" title="Ubah Mode Terang / Gelap">
   <i class="fas fa-moon" id="moonIcon"></i>
   <i class="fas fa-sun" id="sunIcon"></i>
 </button>
 
 <style>
-
-/* Dark Toggle - Minimalis & Transparan */
+/* Toggle Style - Transparan Minimal */
 .dark-mode-toggle {
   position: fixed;
   right: 15px;
@@ -745,7 +744,7 @@
   transform: translateY(-50%);
   width: 52px;
   height: 52px;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.3);
   border: none;
   border-radius: 50%;
   display: flex;
@@ -759,8 +758,8 @@
 }
 
 .dark-mode-toggle:hover {
-  background: rgba(0, 0, 0, 0.4);
-  transform: translateY(-50%) scale(1.12);
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .dark-mode-toggle i {
@@ -769,76 +768,47 @@
   position: absolute;
 }
 
-#moonIcon { 
-  color: #e0b0ff; 
-}
+#moonIcon { color: #e0b0ff; }
+#sunIcon  { color: #ffe066; opacity: 0; transform: rotate(-30deg); }
 
-#sunIcon { 
-  color: #ffe066; 
-  opacity: 0; 
-  transform: rotate(-30deg); 
-}
+.dark-mode-toggle.dark #moonIcon { opacity: 0; transform: rotate(30deg); }
+.dark-mode-toggle.dark #sunIcon  { opacity: 1; transform: rotate(0); }
 
-/* Saat Mode Dark */
-.dark-mode-toggle.dark #moonIcon {
-  opacity: 0;
-  transform: rotate(30deg);
-}
-
-.dark-mode-toggle.dark #sunIcon {
-  opacity: 1;
-  transform: rotate(0);
-}
-
-/* ==================== RESPONSIVE MOBILE ==================== */
+/* Responsive Mobile */
 @media (max-width: 991.98px) {
-  .dark-mode-toggle {
-    width: 46px;
-    height: 46px;
-    right: 12px;
-    top: 75px;
-    transform: none;
-  }
-  .dark-mode-toggle i {
-    font-size: 23px;
-  }
+  .dark-mode-toggle { width: 46px; height: 46px; right: 12px; top: 75px; transform: none; }
+  .dark-mode-toggle i { font-size: 23px; }
 }
-
 @media (max-width: 576px) {
-  .dark-mode-toggle {
-    width: 42px;
-    height: 42px;
-    right: 10px;
-    top: 70px;
-  }
-  .dark-mode-toggle i {
-    font-size: 21px;
-  }
+  .dark-mode-toggle { width: 42px; height: 42px; right: 10px; top: 70px; }
+  .dark-mode-toggle i { font-size: 21px; }
 }
 </style>
 
 <script>
-// Script Toggle
+// Dark Mode Toggle - Single File (Tanpa redirect)
 document.addEventListener('DOMContentLoaded', function() {
   const toggleBtn = document.getElementById('darkModeToggle');
-  const moonIcon = document.getElementById('moonIcon');
-  const sunIcon = document.getElementById('sunIcon');
+  const html = document.documentElement;
 
-  function toggleMode() {
-    if (window.location.href.includes('index-dark.html')) {
-      localStorage.setItem('theme', 'light');
-      window.location.href = 'index.html';
-    } else {
+  // Load saved preference
+  if (localStorage.getItem('theme') === 'dark') {
+    html.classList.add('dark');
+    toggleBtn.classList.add('dark');
+  }
+
+  function toggleDarkMode() {
+    html.classList.toggle('dark');
+    toggleBtn.classList.toggle('dark');
+
+    if (html.classList.contains('dark')) {
       localStorage.setItem('theme', 'dark');
-      window.location.href = 'index-dark.html';
+    } else {
+      localStorage.setItem('theme', 'light');
     }
   }
 
-  toggleBtn.addEventListener('click', toggleMode);
-
-  if (window.location.href.includes('index-dark.html')) {
-    toggleBtn.classList.add('dark');
-  }
+  toggleBtn.addEventListener('click', toggleDarkMode);
 });
 </script>
 	
