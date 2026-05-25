@@ -3915,7 +3915,7 @@ html.dark .footer-copyright p,
 html.dark .nav-separator .nav-link,
 html.dark #footer .nav-link,
 html.dark .text-white-50 {
-    color: #F5F5DC !important;
+    color: #ffffff !important;
 }
 html.dark .social-icons a i {
 	color: #ff69b4 !important;
@@ -3950,7 +3950,7 @@ html.dark .ajax-container h2,
 .ajax-container .list-style-2 span,
 .ajax-container .text-dark,
 .ajax-container .row.align-items-center {
-  color: #000000 !important;
+  color: #ffffff !important;
 }
 .ajax-container { background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
@@ -3966,7 +3966,7 @@ html.dark .list-style-2 .text-dark {
 
 /* 5. Perbaikan Umum Lainnya */
 html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
-    color: #000000 !important;
+    color: #ffffff !important;
 }
 
 html.dark .text-dark, 
