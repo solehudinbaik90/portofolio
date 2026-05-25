@@ -3914,10 +3914,12 @@ html.dark p.mb-3.mb-lg-0,
 html.dark .footer-copyright p,
 html.dark .nav-separator .nav-link,
 html.dark .social-icons a,
-html.dark .social-icons-google a i,
 html.dark #footer .nav-link,
 html.dark .text-white-50 {
-    color: ##ff69b4 !important;
+    color: #ffffff !important;
+}
+html.dark .social-icons-google a i {
+	color: #ff69b4 !important;
 }
 
 /* 3. Modal - Teks Hitam (#000000) sesuai permintaan */
@@ -3956,12 +3958,12 @@ html.dark .ajax-container h2,
 
 
 html.dark .list-style-2 .text-dark {
-    color: #ffffff !important;
+    color: #000000 !important;
 }
 
 /* 5. Perbaikan Umum Lainnya */
 html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
-    color: #fff !important;
+    color: #000000 !important;
 }
 
 html.dark .text-dark, 
