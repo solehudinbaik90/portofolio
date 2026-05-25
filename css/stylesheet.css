@@ -3876,18 +3876,23 @@ input:-internal-autofill-selected {
   border-radius: 4px 0px 0px 4px;
 }
 
-/* ====================== DARK MODE ====================== */
+
+  /* ====================== DARK MODE ====================== */
 html.dark body,
 html.dark #main-wrapper {
   background: #111418 !important;
   color: #e9ecef;
 }
 
-html.dark .section { background: transparent !important; }
+html.dark .section { 
+  background: transparent !important; 
+}
 
 /* Background Sections */
 html.dark .bg-light,
-html.dark .bg-white { background-color: #212529 !important; }
+html.dark .bg-white { 
+  background-color: #212529 !important; 
+}
 
 html.dark #about { background: #212529 !important; }
 html.dark #services,
@@ -3896,23 +3901,91 @@ html.dark #contact { background: #343a40 !important; }
 html.dark #resume,
 html.dark #testimonial { background: #212529 !important; }
 
-/* Text & Elements */
-html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
-  color: #fff !important;
+/* ================== PERBAIKAN UTAMA ================== */
+
+/* 1. Heading Besar (text-24 opacity-1) */
+html.dark .text-24.text-muted.opacity-1 {
+    color: #ffffff !important;
+    opacity: 0.65 !important;   /* Diperbesar */
 }
-html.dark .text-dark, html.dark .text-muted { color: #adb5bd !important; }
-html.dark .featured-box.style-3 .featured-box-icon { background: #343a40 !important; }
-html.dark .progress { background-color: #495057 !important; }
+
+/* 2. Teks yang harus Putih (#ffffff) */
+html.dark p.mb-3.mb-lg-0,
+html.dark .footer-copyright p,
+html.dark .nav-separator .nav-link,
+html.dark .social-icons a,
+html.dark .social-icons-google a i,
+html.dark #footer .nav-link,
+html.dark .text-white-50 {
+    color: #ffffff !important;
+}
+
+/* 3. Modal - Teks Hitam (#000000) sesuai permintaan */
+html.dark .modal-content {
+    background-color: #f8f9fa !important;   /* Background terang */
+    color: #000000 !important;
+}
+
+html.dark .modal-header,
+html.dark .modal-body {
+    color: #000000 !important;
+}
+
+html.dark .modal-title,
+html.dark .modal-body h3,
+html.dark .modal-body h5,
+html.dark .modal-body p,
+html.dark .modal-body li,
+html.dark .modal-body h4,
+html.dark .modal-body h2 {
+    color: #000000 !important;
+}
+
+/* 4. Portfolio Ajax / Project Detail */
+html.dark h2.text-6.font-weight-600.text-center.text-white,
+html.dark h2.text-6.font-weight-600.text-center,
+html.dark h4.text-4.font-weight-600 {
+    color: #ffffff !important;
+}
+
+html.dark .list-style-2 .text-dark {
+    color: #ffffff !important;
+}
+
+/* 5. Perbaikan Umum Lainnya */
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+    color: #fff !important;
+}
+
+html.dark .text-dark, 
+html.dark .text-muted { 
+    color: #adb5bd !important; 
+}
+
+html.dark .featured-box.style-3 .featured-box-icon { 
+    background: #343a40 !important; 
+}
+
+html.dark .progress { 
+    background-color: #495057 !important; 
+}
+
 html.dark .form-control,
 html.dark .custom-select {
-  background: #343a40 !important;
-  border-color: #495057 !important;
-  color: #fff !important;
+    background: #343a40 !important;
+    border-color: #495057 !important;
+    color: #fff !important;
 }
-html.dark #footer { background: #212529 !important; }
-html.dark .list-style-2 > li { border-color: rgba(255,255,255,0.1) !important; }
 
-/* ================== TOGGLE BUTTON ================== */
+html.dark #footer { 
+    background: #212529 !important; 
+}
+
+html.dark .list-style-2 > li { 
+    border-color: rgba(255,255,255,0.1) !important; 
+}
+
+/* Toggle Button (tetap sama) */
 .dark-mode-toggle {
   position: fixed;
   right: 15px;
@@ -3949,7 +4022,7 @@ html.dark .list-style-2 > li { border-color: rgba(255,255,255,0.1) !important; }
 .dark-mode-toggle.dark #moonIcon { opacity: 0; transform: rotate(30deg); }
 .dark-mode-toggle.dark #sunIcon  { opacity: 1; transform: rotate(0); }
 
-/* Responsive */
+/* Responsive Toggle */
 @media (max-width: 991.98px) {
   .dark-mode-toggle { width: 46px; height: 46px; right: 12px; top: 75px; transform: none; }
   .dark-mode-toggle i { font-size: 23px; }
