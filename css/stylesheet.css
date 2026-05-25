@@ -2604,6 +2604,7 @@ html[dir="rtl"] .nav.nav-separator .nav-item + .nav-item .nav-link:after {
 .list-style-2, 
 .list-style-2 span {
   color: #000000;
+  text-shadow: 1px 1px 2px #ffffff;
 }
 
 .list-style-2 a {
