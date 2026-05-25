@@ -3877,7 +3877,7 @@ input:-internal-autofill-selected {
 }
 
 
-  /* ====================== DARK MODE ====================== */
+  /* ====================== DARK MODE TOGGLE ====================== */
 html.dark body,
 html.dark #main-wrapper {
   background: #111418 !important;
@@ -3903,10 +3903,9 @@ html.dark #testimonial { background: #212529 !important; }
 
 /* ================== PERBAIKAN UTAMA ================== */
 
-/* 1. Heading Besar (text-24 opacity-1) */
-html.dark .text-24.text-muted.opacity-1 {
+html.dark .text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0 {
     color: #000000 !important;
-    opacity: 0,1 !important;   /* Diperbesar */
+    opacity: 0,3 !important;
 }
 
 /* 2. Teks yang harus Putih (#ffffff) */
@@ -3918,7 +3917,7 @@ html.dark .text-white-50 {
     color: #ffffff !important;
 }
 html.dark .social-icons a i {
-	color: #ff69b4 !important;
+	color: #ffffff !important;
 }
 
 /* 3. Modal - Teks Hitam (#000000) sesuai permintaan */
@@ -3956,7 +3955,7 @@ html.dark .ajax-container h2,
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px) !important;
 }
-.ajax-container .social-icons a { color: #ff69b4 !important;
+.ajax-container .social-icons a { color: #ffffff !important;
 }
 
 
