@@ -2601,9 +2601,12 @@ html[dir="rtl"] .nav.nav-separator .nav-item + .nav-item .nav-link:after {
   padding: 30px;
 }
 
-.list-style-2, 
+.list-style-2,{
+  color: #ffffff; 
+}
+
 .list-style-2 span {
-  color: #000000;
+  color: #000000; 
 }
 
 .list-style-2 a {
@@ -3886,7 +3889,7 @@ input:-internal-autofill-selected {
 }
 
 
-  /* ====================== DARK MODE TOGGLE ====================== */
+  /* ===== DARK MODE TOGGLE =========== */
 html.dark body,
 html.dark #main-wrapper {
   background: #111418 !important;
@@ -3910,14 +3913,14 @@ html.dark #contact { background: #343a40 !important; }
 html.dark #resume,
 html.dark #testimonial { background: #212529 !important; }
 
-/* ================== PERBAIKAN UTAMA ================== */
+/* ========= PERBAIKAN UTAMA ========== */
 
 html.dark .text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0 {
     color: #000000 !important;
     opacity: 0,3 !important;
 }
 
-/* 2. Teks yang harus Putih (#ffffff) */
+/* Teks yang harus Putih */
 html.dark p.mb-3.mb-lg-0,
 html.dark .footer-copyright p,
 html.dark .nav-separator .nav-link,
@@ -3929,9 +3932,9 @@ html.dark .social-icons a i {
 	color: #ffffff !important;
 }
 
-/* 3. Modal - Teks Hitam (#000000) sesuai permintaan */
+/* Modal - Teks Hitam */
 html.dark .modal-content {
-    background-color: #f8f9fa !important;   /* Background terang */
+    background-color: #f8f9fa !important;
     color: #000000 !important;
 }
 
@@ -3950,7 +3953,7 @@ html.dark .modal-body h2 {
     color: #000000 !important;
 }
 
-/* 4. Portfolio Ajax / Project Detail */
+/* Portfolio Ajax & Project Detail */
 html.dark .ajax-container h2,
 .ajax-container h4,
 .ajax-container p,
@@ -3960,10 +3963,9 @@ html.dark .ajax-container h2,
 .ajax-container .row.align-items-center {
   color: #ffffff !important;
 }
-.ajax-container {
-  background-color: rgba(255, 255, 255, 0.3); 
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px) !important;
+.ajax-container { background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px) !important;
 }
 .ajax-container .social-icons a { color: #ffffff !important;
 }
@@ -3973,7 +3975,7 @@ html.dark .list-style-2 .text-dark {
     color: #ffffff !important;
 }
 
-/* 5. Perbaikan Umum Lainnya */
+/* Perbaikan Umum Lainnya */
 html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
     color: #ffffff !important;
 }
