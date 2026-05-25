@@ -2601,6 +2601,16 @@ html[dir="rtl"] .nav.nav-separator .nav-item + .nav-item .nav-link:after {
   padding: 30px;
 }
 
+.ajax-container h2,
+.ajax-container h4,
+.ajax-container p,
+.ajax-container span,
+.ajax-container .list-style-2 span,
+.ajax-container .text-dark,
+.ajax-container .row.align-items-center {
+  color: #ffffff !important;
+}
+
 .mfp-close-btn-in .ajax-container.bg-dark .mfp-close, .mfp-close-btn-in .ajax-container.bg-dark-1 .mfp-close, .mfp-close-btn-in .ajax-container.bg-dark-2 .mfp-close, .mfp-close-btn-in .ajax-container.bg-dark-3 .mfp-close, .mfp-close-btn-in .ajax-container.bg-dark-4 .mfp-close {
   color: #fff;
   opacity: .65;
