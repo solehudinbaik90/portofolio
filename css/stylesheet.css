@@ -3875,3 +3875,86 @@ input:-internal-autofill-selected {
   left: -40px;
   border-radius: 4px 0px 0px 4px;
 }
+
+/* ====================== DARK MODE ====================== */
+html.dark body,
+html.dark #main-wrapper {
+  background: #111418 !important;
+  color: #e9ecef;
+}
+
+html.dark .section { background: transparent !important; }
+
+/* Background Sections */
+html.dark .bg-light,
+html.dark .bg-white { background-color: #212529 !important; }
+
+html.dark #about { background: #212529 !important; }
+html.dark #services,
+html.dark #portfolio,
+html.dark #contact { background: #343a40 !important; }
+html.dark #resume,
+html.dark #testimonial { background: #212529 !important; }
+
+/* Text & Elements */
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+  color: #fff !important;
+}
+html.dark .text-dark, html.dark .text-muted { color: #adb5bd !important; }
+html.dark .featured-box.style-3 .featured-box-icon { background: #343a40 !important; }
+html.dark .progress { background-color: #495057 !important; }
+html.dark .form-control,
+html.dark .custom-select {
+  background: #343a40 !important;
+  border-color: #495057 !important;
+  color: #fff !important;
+}
+html.dark #footer { background: #212529 !important; }
+html.dark .list-style-2 > li { border-color: rgba(255,255,255,0.1) !important; }
+
+/* ================== TOGGLE BUTTON ================== */
+.dark-mode-toggle {
+  position: fixed;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  background: rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+}
+
+.dark-mode-toggle:hover {
+  background: rgba(0, 0, 0, 0.45);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.dark-mode-toggle i {
+  font-size: 26px;
+  transition: all 0.5s ease;
+  position: absolute;
+}
+
+#moonIcon { color: #e0b0ff; }
+#sunIcon  { color: #ffe066; opacity: 0; transform: rotate(-30deg); }
+
+.dark-mode-toggle.dark #moonIcon { opacity: 0; transform: rotate(30deg); }
+.dark-mode-toggle.dark #sunIcon  { opacity: 1; transform: rotate(0); }
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .dark-mode-toggle { width: 46px; height: 46px; right: 12px; top: 75px; transform: none; }
+  .dark-mode-toggle i { font-size: 23px; }
+}
+@media (max-width: 576px) {
+  .dark-mode-toggle { width: 42px; height: 42px; right: 10px; top: 70px; }
+  .dark-mode-toggle i { font-size: 21px; }
+}
