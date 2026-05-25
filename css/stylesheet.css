@@ -2610,7 +2610,7 @@ html[dir="rtl"] .nav.nav-separator .nav-item + .nav-item .nav-link:after {
 }
 
 .list-style-2 li {
-  color: #ffffff; 
+  color: #000000; 
 }
 
 .list-style-2 a {
