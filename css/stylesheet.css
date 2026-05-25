@@ -3915,9 +3915,8 @@ html.dark #testimonial { background: #212529 !important; }
 
 /* ========= PERBAIKAN UTAMA ========== */
 
-html.dark .text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0 {
-    color: #000000 !important;
-    opacity: 0,3 !important;
+html.dark h2.text-24.text-light.opacity-4.text-uppercase.fw-600.w-100.mb-0 {
+  color: rgba(128, 128, 128, 0.6) !important;
 }
 
 /* Teks yang harus Putih */
@@ -3973,6 +3972,10 @@ html.dark .ajax-container h2,
 
 html.dark .list-style-2 .text-dark {
     color: #ffffff !important;
+}
+
+html.dark .list-style-2 span {
+  color: #ffffff !important;; 
 }
 
 /* Perbaikan Umum Lainnya */
