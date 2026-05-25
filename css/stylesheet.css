@@ -2609,6 +2609,10 @@ html[dir="rtl"] .nav.nav-separator .nav-item + .nav-item .nav-link:after {
   color: #000000; 
 }
 
+.list-style-2 li {
+  color: #ffffff; 
+}
+
 .list-style-2 a {
 	color: #e83e8c;
 }
