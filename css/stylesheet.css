@@ -3913,12 +3913,11 @@ html.dark .text-24.text-muted.opacity-1 {
 html.dark p.mb-3.mb-lg-0,
 html.dark .footer-copyright p,
 html.dark .nav-separator .nav-link,
-html.dark .social-icons a,
 html.dark #footer .nav-link,
 html.dark .text-white-50 {
-    color: #ffffff !important;
+    color: #F5F5DC !important;
 }
-html.dark .social-icons-google a i {
+html.dark .social-icons a i {
 	color: #ff69b4 !important;
 }
 
@@ -3958,7 +3957,7 @@ html.dark .ajax-container h2,
 
 
 html.dark .list-style-2 .text-dark {
-    color: #000000 !important;
+    color: #F5F5DC !important;
 }
 
 /* 5. Perbaikan Umum Lainnya */
@@ -3968,7 +3967,7 @@ html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark 
 
 html.dark .text-dark, 
 html.dark .text-muted { 
-    color: #adb5bd !important; 
+    color: #F5F5DC !important; 
 }
 
 html.dark .featured-box.style-3 .featured-box-icon { 
