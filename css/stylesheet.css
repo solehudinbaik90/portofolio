@@ -3916,7 +3916,7 @@ html.dark #testimonial { background: #212529 !important; }
 /* ========= PERBAIKAN UTAMA ========== */
 
 html.dark h2.text-24.text-light.opacity-4.text-uppercase.fw-600.w-100.mb-0 {
-  color: rgba(128, 128, 128, 0.6) !important;
+  color: rgba(128, 128, 128, 0.3) !important;
 }
 
 /* Teks yang harus Putih */
