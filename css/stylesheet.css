@@ -3952,12 +3952,16 @@ html.dark .ajax-container h2,
 .ajax-container .row.align-items-center {
   color: #000000 !important;
 }
+.ajax-container { background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px) !important;
+}
 .ajax-container .social-icons a { color: #ff69b4 !important;
 }
 
 
 html.dark .list-style-2 .text-dark {
-    color: #F5F5DC !important;
+    color: #ffffff !important;
 }
 
 /* 5. Perbaikan Umum Lainnya */
@@ -3967,7 +3971,7 @@ html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark 
 
 html.dark .text-dark, 
 html.dark .text-muted { 
-    color: #F5F5DC !important; 
+    color: #ffffff !important; 
 }
 
 html.dark .featured-box.style-3 .featured-box-icon { 
