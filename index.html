@@ -729,80 +729,33 @@
 </div>
 <!-- Disclaimer Modal End -->
 
-<!-- ==================== DARK MODE TOGGLE ==================== -->
-<button id="darkModeToggle" class="dark-mode-toggle" title="Ubah Mode Terang / Gelap">
-  <i class="fas fa-moon" id="moonIcon"></i>
-  <i class="fas fa-sun" id="sunIcon"></i>
+<!-- Dark Mode Toggle -->
+<button id="darkModeToggle" class="dark-mode-toggle">
+  <i id="moonIcon" class="fas fa-moon"></i>
+  <i id="sunIcon" class="fas fa-sun"></i>
 </button>
 
-<style>
-.dark-mode-toggle {
-  position: fixed;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 52px;
-  height: 52px;
-  background: rgba(0, 0, 0, 0.25);
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 9999;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease;
-}
-
-.dark-mode-toggle:hover {
-  background: rgba(0, 0, 0, 0.45);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.dark-mode-toggle i {
-  font-size: 26px;
-  transition: all 0.5s ease;
-  position: absolute;
-}
-
-#moonIcon { color: #e0b0ff; }
-#sunIcon  { color: #ffe066; opacity: 0; transform: rotate(-30deg); }
-
-.dark-mode-toggle.dark #moonIcon { opacity: 0; transform: rotate(30deg); }
-.dark-mode-toggle.dark #sunIcon  { opacity: 1; transform: rotate(0); }
-
-/* Responsive */
-@media (max-width: 991.98px) {
-  .dark-mode-toggle { width: 46px; height: 46px; right: 12px; top: 75px; transform: none; }
-  .dark-mode-toggle i { font-size: 23px; }
-}
-@media (max-width: 576px) {
-  .dark-mode-toggle { width: 42px; height: 42px; right: 10px; top: 70px; }
-  .dark-mode-toggle i { font-size: 21px; }
-}
-</style>
-
 <script>
-// Toggle antara index.html dan index-dark.html
-document.addEventListener('DOMContentLoaded', function() {
-  const toggleBtn = document.getElementById('darkModeToggle');
+// Dark Mode Toggle
+const toggleBtn = document.getElementById('darkModeToggle');
+const html = document.documentElement;
 
-  function toggleMode() {
-    if (window.location.href.includes('index-dark.html')) {
-      localStorage.setItem('theme', 'light');
-      window.location.href = 'index.html';
-    } else {
-      localStorage.setItem('theme', 'dark');
-      window.location.href = 'index-dark.html';
-    }
-  }
+// Cek preferensi yang tersimpan
+if (localStorage.getItem('theme') === 'dark' || 
+    (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  html.classList.add('dark');
+  toggleBtn.classList.add('dark');
+}
 
-  toggleBtn.addEventListener('click', toggleMode);
+// Toggle Function
+toggleBtn.addEventListener('click', () => {
+  html.classList.toggle('dark');
+  toggleBtn.classList.toggle('dark');
 
-  // Set icon sesuai halaman
-  if (window.location.href.includes('index-dark.html')) {
-    toggleBtn.classList.add('dark');
+  if (html.classList.contains('dark')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
   }
 });
 </script>
