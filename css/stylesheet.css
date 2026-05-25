@@ -2602,9 +2602,12 @@ html[dir="rtl"] .nav.nav-separator .nav-item + .nav-item .nav-link:after {
 }
 
 .list-style-2, 
-.list-style-2 span, 
+.list-style-2 span {
+  color: #000000;
+}
+
 .list-style-2 a {
-  color: #ffffff !important;
+	color: #e83e8c;
 }
 
 .mfp-close-btn-in .ajax-container.bg-dark .mfp-close, .mfp-close-btn-in .ajax-container.bg-dark-1 .mfp-close, .mfp-close-btn-in .ajax-container.bg-dark-2 .mfp-close, .mfp-close-btn-in .ajax-container.bg-dark-3 .mfp-close, .mfp-close-btn-in .ajax-container.bg-dark-4 .mfp-close {
