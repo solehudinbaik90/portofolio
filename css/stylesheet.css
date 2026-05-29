@@ -3876,10 +3876,10 @@ input:-internal-autofill-selected {
   border-radius: 4px 0px 0px 4px;
 }
 
-/* Toggle Button  */
+/* Toggle Button Dark Mode */
 .dark-mode-toggle {
-  position: fixed;
-  right: 15px;
+  position: absolute;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 52px;
@@ -3913,7 +3913,6 @@ input:-internal-autofill-selected {
 .dark-mode-toggle.dark #moonIcon { opacity: 0; transform: rotate(30deg); }
 .dark-mode-toggle.dark #sunIcon  { opacity: 1; transform: rotate(0); }
 
-/* Responsive Toggle */
 @media (max-width: 991.98px) {
   .dark-mode-toggle { width: 46px; height: 46px; right: 12px; top: 75px; transform: none; }
   .dark-mode-toggle i { font-size: 23px; }
