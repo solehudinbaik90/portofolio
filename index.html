@@ -736,27 +736,46 @@ Seluruh konten yang tersedia pada website ini, termasuk teks, gambar, desain, lo
 </button>
 
 <script>
-// Dark Mode Toggle
+// Dark Mode Toggle dengan external dark.css
 const toggleBtn = document.getElementById('darkModeToggle');
 const html = document.documentElement;
 
-// Cek preferensi yang tersimpan
-if (localStorage.getItem('theme') === 'dark' ||
-(!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-html.classList.add('dark');
-toggleBtn.classList.add('dark');
+// Fungsi untuk load / unload dark.css
+function loadDarkCSS() {
+    if (!document.getElementById('dark-mode-css')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'css/dark.css';
+        link.id = 'dark-mode-css';
+        document.head.appendChild(link);
+    }
+}
+
+function removeDarkCSS() {
+    const darkLink = document.getElementById('dark-mode-css');
+    if (darkLink) darkLink.remove();
+}
+
+// Cek preferensi yang tersimpan atau system preference
+if (localStorage.getItem('theme') === 'dark' || 
+   (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+    toggleBtn.classList.add('dark');
+    loadDarkCSS();
 }
 
 // Toggle Function
 toggleBtn.addEventListener('click', () => {
-html.classList.toggle('dark');
-toggleBtn.classList.toggle('dark');
+    html.classList.toggle('dark');
+    toggleBtn.classList.toggle('dark');
 
-if (html.classList.contains('dark')) {
-localStorage.setItem('theme', 'dark');
-} else {
-localStorage.setItem('theme', 'light');
-}
+    if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        loadDarkCSS();
+    } else {
+        localStorage.setItem('theme', 'light');
+        removeDarkCSS();
+    }
 });
 </script>
 
