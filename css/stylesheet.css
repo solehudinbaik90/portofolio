@@ -3945,7 +3945,7 @@ input:-internal-autofill-selected {
   }
 }
 
-/* ====================== GAMBAR PROFILE  ====================== */
+/* ====================== GAMBAR PROFILS ====================== */
 .image_profils {
   position: relative;
   display: inline-block;
@@ -3966,8 +3966,8 @@ input:-internal-autofill-selected {
 /* Circle Ripple Effect */
 .circle_bg1 {
   border-radius: 100%;
-  height: 390px;
-  width: 390px;
+  height: 190px;
+  width: 190px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -4000,7 +4000,7 @@ input:-internal-autofill-selected {
   100% { transform: scale(1.5); opacity: 0; }
 }
 
-/* Efek fadeInUp (Anda sudah punya) */
+/* ====================== ANIMASI fadeInUp (Sesuai CSS Anda) ====================== */
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
@@ -4034,28 +4034,47 @@ input:-internal-autofill-selected {
   }
 }
 
-/* Efek overlay gradient yang menyebar dari tengah ke samping */
-.image-overlay {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 0;
-  height: 100%;
-  background: linear-gradient(to right, rgba(255,255,255,0.5), transparent);
-  transform: translateX(-50%);
-  animation: spreadOverlay 2s forwards;
-  z-index: 2;
-  pointer-events: none;
+/* fadeInUpBig (Anda sudah punya) */
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig;
 }
 
-/* Animasi memperlebar overlay dari tengah ke samping */
-@keyframes spreadOverlay {
-  from {
-    width: 0;
-    left: 50%;
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
   }
-  to {
-    width: 100%;
-    left: 0;
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
+}
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/* fadeOut (tambahan) */
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
