@@ -3945,7 +3945,7 @@ input:-internal-autofill-selected {
   }
 }
 
-/* ====================== GAMBAR KECIL BRO ====================== */
+/* ====================== GAMBAR + ANIMASI CIRCLE ====================== */
 .image_profils {
   position: relative;
   display: inline-block;
@@ -3960,18 +3960,20 @@ input:-internal-autofill-selected {
   width: 180px;
   height: 180px;
   object-fit: cover;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  position: relative;
 }
 
-
+/* Circle Animation - Centered & Covering Gambar */
 .circle_bg1 {
   position: absolute;
-  width: 260px;
-  height: 260px;
+  width: 240px;
+  height: 240px;
   left: 50%;
   top: 50%;
-  transform: translate(-40%, -50%);   /* Digeser ke kanan (samping) */
-  z-index: -1;
+  transform: translate(-50%, -50%);
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -3980,36 +3982,41 @@ input:-internal-autofill-selected {
   position: absolute;
   inset: 0;
   border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.75);
   transform: scale(0.1);
-  animation: ripple1 3.5s linear infinite;
-  background-color: rgba(255, 255, 255, 0.7);
+  animation: ripple1 3.8s linear infinite;
 }
 
-.circle_bg1 span:nth-child(2) { animation-delay: 0.6s; }
-.circle_bg1 span:nth-child(3) { animation-delay: 1.2s; }
-.circle_bg1 span:nth-child(4) { animation-delay: 1.8s; }
+.circle_bg1 span:nth-child(2) { animation-delay: 0.7s; }
+.circle_bg1 span:nth-child(3) { animation-delay: 1.4s; }
+.circle_bg1 span:nth-child(4) { animation-delay: 2.1s; }
 
+/* Ripple Effect */
 @keyframes ripple1 {
-  0%   { transform: scale(0.2); opacity: 0.9; }
-  60%  { transform: scale(1.1); opacity: 0.3; }
+  0%   { transform: scale(0.3); opacity: 0.9; }
+  50%  { transform: scale(1.05); opacity: 0.4; }
   100% { transform: scale(1.6); opacity: 0; }
 }
 
+/* Responsif */
 @media (max-width: 992px) {
   .image_profils img {
     width: 160px;
     height: 160px;
   }
   .circle_bg1 {
-    width: 230px;
-    height: 230px;
-    transform: translate(-35%, -50%);
+    width: 210px;
+    height: 210px;
   }
 }
 
 @media (max-width: 576px) {
   .image_profils img {
-    width: 140px;
-    height: 140px;
+    width: 145px;
+    height: 145px;
+  }
+  .circle_bg1 {
+    width: 195px;
+    height: 195px;
   }
 }
