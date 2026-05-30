@@ -3945,56 +3945,94 @@ input:-internal-autofill-selected {
   }
 }
 
-/* ====================== ANIMATED GAMBAR PROFILS ====================== */
-.image_profils {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  max-width: 150px;
-  width: 100%;
+/* ======================
+   FOTO PROFIL RIPPLE
+====================== */
+
+.hero-content .image_profils{
+    margin-bottom: 2rem;
 }
 
-.image_profils img {
-  border: 5px solid #fff;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+.image_profils{
+    --photo-size: clamp(130px, 20vw, 190px);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: var(--photo-size);
+    height: var(--photo-size);
+
+    margin: 0 auto;
 }
 
-.circle_bg1 {
-  border-radius: 100%;
-  height: 170px;
-  width: 170px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  z-index: -1;
-  pointer-events: none;
+.image_profils img{
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 5px solid #fff;
+    box-shadow: 0 5px 25px rgba(0,0,0,.35);
 }
 
-.circle_bg1 span {
-  display: block;
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  transform: scale(0.1);
-  animation: ripple1 4s linear infinite;
-  background-color: rgba(255, 255, 255, 0.65);
+.circle_bg1{
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+    pointer-events: none;
 }
 
-.circle_bg1 span:nth-child(2) { animation-delay: 0.5s; }
-.circle_bg1 span:nth-child(3) { animation-delay: 1s; }
-.circle_bg1 span:nth-child(4) { animation-delay: 1.5s; }
-.circle_bg1 span:nth-child(5) { animation-delay: 2s; }
-.circle_bg1 span:nth-child(6) { animation-delay: 2.5s; }
-.circle_bg1 span:nth-child(7) { animation-delay: 3s; }
-.circle_bg1 span:nth-child(8) { animation-delay: 3.5s; }
+.circle_bg1 span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-@keyframes ripple1 {
-  0%   { transform: scale(0.1); opacity: 1; }
-  50%  { transform: scale(0.85); opacity: 0.4; }
-  100% { transform: scale(1.5); opacity: 0; }
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.18);
+
+    transform: translate(-50%, -50%) scale(.2);
+
+    animation: ripple1 4s linear infinite;
+}
+
+.circle_bg1 span:nth-child(2){
+    animation-delay: 1s;
+}
+
+.circle_bg1 span:nth-child(3){
+    animation-delay: 2s;
+}
+
+.circle_bg1 span:nth-child(4){
+    animation-delay: 3s;
+}
+
+@keyframes ripple1{
+    0%{
+        transform: translate(-50%, -50%) scale(.2);
+        opacity: .8;
+    }
+
+    70%{
+        opacity: .25;
+    }
+
+    100%{
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0;
+    }
 }
