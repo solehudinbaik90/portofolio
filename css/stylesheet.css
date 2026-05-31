@@ -3644,6 +3644,10 @@ select.form-control:not([size]):not([multiple]):not(.form-control-sm) {
   color: #8e9a9d !important;
 }
 
+.text-danger {
+  color: #d63384 !important;
+}
+
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
   background-color: #bf2672 !important;
 }
