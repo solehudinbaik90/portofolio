@@ -3955,7 +3955,7 @@ input:-internal-autofill-selected {
 }
 
 .image_profils img {
-  border: 5px solid #000;
+  border: 5px solid #808080;
   border-radius: 50%;
   width: 150px;
   height: 150px;
