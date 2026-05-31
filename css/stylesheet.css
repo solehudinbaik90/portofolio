@@ -3621,7 +3621,7 @@ select.form-control:not([size]):not([multiple]):not(.form-control-sm) {
 }
 
 .btn-link:hover {
-  color: #000000 !important;
+  color: #43c6db !important;
 }
 
 .text-secondary {
