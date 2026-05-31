@@ -3659,13 +3659,13 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 }
 
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active {
-  background-color: #1baa80;
-  border-color: #1baa80;
+  background-color: #000000;
+  border-color: #000000;
 }
 
 .btn-primary.focus, .btn-primary:focus {
-  background-color: #1baa80;
-  border-color: #1baa80;
+  background-color: #ff1493;
+  border-color: #ff1493;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
